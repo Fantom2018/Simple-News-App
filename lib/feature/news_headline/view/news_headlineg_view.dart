@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 
 
 class NewsHeadlineView extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<NewsHeadlineController>();
