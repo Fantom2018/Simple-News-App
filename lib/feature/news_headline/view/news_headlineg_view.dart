@@ -1,4 +1,5 @@
 import 'package:easy_news/core/widget/drawer.dart';
+import 'package:easy_news/feature/news_headline/controller/news_headline_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:easy_news/service/http_service.dart';
-import 'package:easy_news/service/http_constants.dart';
+//import 'package:easy_news/service/http_constants.dart';
+
+const BASE_URL = "https://newsapi.org/";
+ const API_KEY = "56784348fb5d41c8844a1be8cb9ec14d";
+
 
 class HttpServiceImpl implements HttpService{
   late Dio _dio;
@@ -20,14 +24,14 @@ class HttpServiceImpl implements HttpService{
   }
   initializeInterceptor(){
     _dio.interceptors.add(InterceptorsWrapper(
-      onError: (error, interceptorHandler){
+      onError: (error, ErrorInterceptorHandler){
         print(error.message);
       },
-      onRequest: (request, interceptorHandler){
+      onRequest: (request, RequestInterceptorHandler){
         print("${request.method} | ${request.path} ");
       },
-      onResponse: (response, interceptorHandler){
-        print("${response.statusCode} ${response.statusMessage} ${response.data}");
+      onResponse: (response, ResponseInterceptorHandler ){
+        print("${response.statusCode} | ${response.statusMessage} | ${response.data}");
       }
     ));
   }
@@ -35,8 +39,9 @@ class HttpServiceImpl implements HttpService{
   @override
   void init() {
     _dio = Dio(BaseOptions(
-    baseUrl: HttpConst.BASE_URL,
-    headers: {"Authorization" : "Baerer ${HttpConst.API_KEI}"}
+
+    baseUrl: BASE_URL,
+    headers: {"Authorization" : "Baerer $API_KEY"}
 
     ));
     initializeInterceptor();

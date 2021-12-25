@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:easy_news/core/model/article.dart';
 import 'package:easy_news/core/model/news_response_model.dart';
 import 'package:easy_news/service/http_service.dart';
@@ -38,7 +40,7 @@ class NewsRepoImpl implements NewsRepo {
       return parsedResponse.articles;
     } on Exception catch (e) {
       print(e);
-      return [];
+      return null!;
     }
   }
 

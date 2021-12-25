@@ -9,6 +9,8 @@ class Article{
 
   @JsonKey(name:"author")
    late String author;
+  @JsonKey(name : "description")
+  late String desc;
 
   @JsonKey(name:"title")
    late String title;

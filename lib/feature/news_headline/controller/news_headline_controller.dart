@@ -3,7 +3,7 @@ import 'package:easy_news/core/repository/news_repo.dart';
 import 'package:easy_news/core/repository/news_repo_impl.dart';
 import 'package:get/get.dart';
 
-class NewsNeadlineController extends GetxController{
+class NewsHeadlineController extends GetxController{
   late NewsRepo _newsRepo;
 
   NewsHeadlineController(){

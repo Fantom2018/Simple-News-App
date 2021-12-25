@@ -1,3 +1,5 @@
+import 'package:easy_news/core/widget/drawer.dart';
+import 'package:easy_news/feature/search_news/controller/search_news_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
